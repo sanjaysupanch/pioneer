@@ -1,0 +1,18 @@
+ {% extends 'base.html' %}
+
+{% block body %}
+
+{% if obj %}
+    {% for k in obj %}
+
+        {{ k.name}} <br>
+        {{ k.emailid }} <br>
+        {{ k.city }}<br>
+        {{ k.dat }} <br>
+    <hr>
+    {% endfor %}
+    
+{% endif %}
+
+{% endblock body %}
+
