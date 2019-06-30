@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+  <title>HOME</title>
+  
+{% endblock %}
+
+
+
+{% block body %}
+<div class="container">
+  <div class="jumbotron">
+    <h1>Welcome to the Pioneer!</h1>
+    {% if user.is_authenticated %}
+        <h2>Hello {{ user.username }}</h2>
+    {% else %}
+        <h2>Register or Login if you'd like to</h2>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

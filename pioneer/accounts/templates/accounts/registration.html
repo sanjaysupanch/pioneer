@@ -2,25 +2,31 @@
 {% load staticfiles %}
 
 {% block head %}
-  
   <title>REGISTER</title>
-    
+  
 {% endblock %}
 
   
 
 {% block body %}
-
-  <h1>User registration form</h1>
-  <div class='container'>
-    <div class='col-md-5'>
-    <form method="post" action="/register/">
-      {% csrf_token %}
-      {{ form1.as_p}}
-      
-      <button type="submit"> Submit</button>
-    </form>
+  <br><br><br>
+  <div class="container" >
+    <div class="jumbotron ">
+      {% if registered %}
+        <h1>Thank you for registering!</h1>
+      {% else %}
+        <h1>Register Here</h1>
+        <h3>Just fill out the form.</h3>
+      <form enctype="multipart/form-data" method="POST">
+          {% csrf_token %}
+          {{ user_form.as_p }}
+          {{ profile_form.as_p }}
+          <input type="submit" name="" value="Register">
+        </form>
+        
+      {% endif %}
     </div>
   </div>
+  
 
-{% endblock body %}
+{% endblock %}
