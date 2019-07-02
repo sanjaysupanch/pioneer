@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.forms import UserChangeForm
 from accounts.models import UserProfile
 from django.contrib.auth.models import User
 from django.core.validators import validate_email
@@ -52,9 +53,27 @@ class add_registration_form(forms.ModelForm):
     #image = forms.ImageField(widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter username.'}), required=True, max_length=50)
     class Meta:
         model = UserProfile
-        fields=('city', 'phone', 'image')
+        fields=['city', 'phone', 'image']
 
     # def clean_phone(self):
     #     LENGTH = 10
     #     if phone != LENGTH :
     #         raise forms.ValidationError("Enter a valid mobile number") 
+
+class EditProfileForm(UserChangeForm):  #our own custom edit profile form
+    email = forms.CharField(widget=forms.EmailInput(attrs={'class':'form-control', 'placeholder':'Enter email ID.'}), required=True, max_length=50)
+    first_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter firstname.'}), required=True, max_length=50)
+    last_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter lastname.'}), required=True, max_length=50)
+    #password = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control', 'placeholder':'Enter password.'}), required=True, max_length=50)
+    
+    class Meta:
+        model=User
+        fields = ('email', 'first_name', 'last_name', 'password')
+
+class ChangeProfileForm(forms.ModelForm):  #our own custom edit profile form
+    city  = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter city name.'}), required=True, max_length=50)
+    phone = forms.IntegerField(widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter Mobile number.'}),required=True)
+    
+    class Meta:
+        model=UserProfile
+        fields=('phone', 'city', 'image')
