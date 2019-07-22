@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block body %}
+
+<h2>{{ post.title }}</h2>
+
+<div class="content">
+    <p>
+        {{ post.content }}
+    </p>
+    <span>
+        Written by {{ post.author }}  on {{ post.created_on }}
+    </span>
+</div>
+{% if post.comment_set.all %}
+  <h2> Comment </h2>
+  <div class="comments">
+    {% for comment in post.comment_set.all %}
+      <p> {{ comment.name }} said on {{ comment.created_on }}
+      <br>{{ comment.content }}</p>
+    {% endfor %}
+{% endif %}
+  <br>
+  {% comment %} ==============><a href="{{post.slug}}">{{post.slug}}</a> {% endcomment %}
+  <h2>Add Comment</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" name="submit" value="Submit">
+  </form>
+    {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+
+{% endblock  %}

@@ -49,23 +49,23 @@ def register(request):
                           {'user_form':user_form,
                            'profile_form':profile_form,
                            'registered':registered})
-def user_login(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(username=username, password=password)
-        if user:
-            if user.is_active:
-                login(request,user)
-                return HttpResponseRedirect(reverse('index'))
-            else:
-                return HttpResponse("Your account was inactive.")
-        else:
-            print("Someone tried to login and failed.")
-            print("They used username: {} and password: {}".format(username,password))
-            return HttpResponse("Invalid login details given")
-    else:
-        return render(request, 'accounts/login.html', {})
+# def user_login(request):
+#     if request.method == 'POST':
+#         username = request.POST.get('username')
+#         password = request.POST.get('password')
+#         user = authenticate(username=username, password=password)
+#         if user:
+#             if user.is_active:
+#                 login(request,user)
+#                 return HttpResponseRedirect(reverse('index'))
+#             else:
+#                 return HttpResponse("Your account was inactive.")
+#         else:
+#             print("Someone tried to login and failed.")
+#             print("They used username: {} and password: {}".format(username,password))
+#             return HttpResponse("Invalid login details given")
+#     else:
+#         return render(request, 'accounts/login.html', {})
 
 @login_required
 def view_profile(request,pk=None):
@@ -75,25 +75,6 @@ def view_profile(request,pk=None):
         user=request.user
     args={'user':user}
     return render(request,'accounts/profile.html',args)
-
-# @login_required
-# def edit_profile(request):        #edit profile view
-#     if request.method=='POST':
-#         form=EditProfileForm(request.POST, instance=request.user)
-#         form1=ChangeProfileForm(request.POST, instance=request.user)
-#         if form.is_valid() and form1.is_valid():
-#             form.save()
-#             UserProfile.objects.filter(user=request.user).update(city=request.POST['city'])
-#             UserProfile.objects.filter(user=request.user).update(phone=request.POST['phone'])
-#             return redirect('/accounts/profile')
-#         # else:
-#         #     return HttpResponse("form  is invalid")
-
-#     else:
-#         form=EditProfileForm(instance=request.user)
-#         form1=ChangeProfileForm(request.POST,instance=request.user)
-#         args={'form':form,'form1':form1}
-#         return render(request,'accounts/edit_profile.html', args)
 
 @login_required
 def edit_profile(request):        #edit profile view
