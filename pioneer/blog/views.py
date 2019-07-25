@@ -1,16 +1,10 @@
 from django.views import generic
 from django.shortcuts import render,redirect, HttpResponse, get_object_or_404
-from blog.models import Post
+from blog.models import *
 from django.contrib.auth.models import User
 from blog.forms import *
 from django.contrib.auth.decorators import user_passes_test
-# class PostList(generic.ListView):
-#     queryset = Post.objects.filter(status=1).order_by('-created_on')
-#     template_name = 'index1.html'
 
-# class PostDetail(generic.DetailView):
-#     model = Post
-#     template_name = 'post_detail.html'
 @user_passes_test(lambda u: u.is_superuser)
 def add_blog(request):
     
@@ -21,7 +15,7 @@ def add_blog(request):
             post=form.save(commit=False)
             post.author= request.user
             post.save()
-            return redirect("blog/")
+            return redirect("/blog")
     else:
         form=PostForm()
     return render(request, 'blog/blog_post.html', {'form':form})
@@ -43,3 +37,7 @@ def view_post(request, slug):
     form.initial['email'] = request.session.get('email')
     arg={'form':form, "post":post}
     return render(request, "blog/post_detail.html", arg)
+
+def show(request):
+    post1= Post.objects.filter(status=1).order_by('-created_on')
+    return render(request, "blog/index.html", {'post1':post1})

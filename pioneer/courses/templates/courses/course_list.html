@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+    <style>
+        img.two {
+        height: 450px;
+        width: 100%;
+        }
+    </style>
+
+{% endblock %}
+
+{% block body %}
+
+<div style="background-color:rgb(0, 210, 200)">
+    
+    <img class="two"  src="../../static/courses/images/16.jpg"  alt="Card image"  >
+    
+    <br><br><br><br><br><br>
+<div class="card-deck" style="width:98%; padding-left:3%;">
+  
+    <div class="card" >
+        <img class="card-img-top" src="../../static/courses/images/3.jpg" alt="Card image">
+        <div class="card-body">
+            <h4 class="card-title">From Basic Level to Advance Level</h4>
+            <p class="card-text"><blockquote>To learn English at an advanced level,
+             you must be clear at your basic level.</blockquote></p>
+            <a href="b-to-adv/" class="btn btn-primary">Read more</a>
+        </div>
+    </div>
+    <div class="card" >
+        <img class="card-img-top" src="../../static/courses/images/11.jpg" alt="Card image">
+        <div class="card-body">
+            <h4 class="card-title">Art of Speaking</h4>
+            <p class="card-text"><blockquote>Mastering the art of speaking is the key
+             to confidently delivering a potent message to an audience.</blockquote></p>
+            <a href="speaking" class="btn btn-primary">Read more</a>
+        </div>
+    </div>
+    <div class="card" >
+        <img class="card-img-top" src="../../static/courses/images/4.jpg" alt="Card image">
+        <div class="card-body">
+            <h4 class="card-title">Vocabulary</h4>
+            <p class="card-text">Vocabulary is a matter of word-building as well as word-using</p>
+            <a href="vocabulary" class="btn btn-primary">Read more</a>
+        </div>
+    </div>
+</div>
+<br><br><br><br>
+<div class="card-deck" style="width:98%; padding-left:3%;">
+  
+    
+    <div class="card" >
+        <img class="card-img-top" src="../../static/courses/images/7.jpg" alt="Card image">
+        <div class="card-body">
+            <h4 class="card-title">Competitive Segment </h4>
+            <p class="card-text">This is the verbal ability questions and answers section for various interview.</p>
+            <a href="c_segment" class="btn btn-primary">Read more</a>
+        </div>
+    </div>
+    
+    <div class="card" >
+        <img class="card-img-top" src="../../static/courses/images/6.jpg" alt="Card image">
+        <div class="card-body">
+            <h4 class="card-title">Expository writing</h4>
+            <p class="card-text"><blockquote>Expository is a type of oral or written discourse that is used to explain,
+             describe, give information or inform.</blockquote></p>
+            <a href="expository" class="btn btn-primary">Read more</a>
+        </div>
+            
+    </div>
+    <div class="card" >
+        <img class="card-img-top" src="../../static/courses/images/9.jpg" alt="Card image">
+        <div class="card-body">
+            <h4 class="card-title">Important Lecture</h4>
+            <p class="card-text">This course will help non-native English speakers improve their listening and note-taking skills for the purpose of listening to academic lectures.</p>
+            <a href="grammar" class="btn btn-primary">Read more</a>
+        </div>
+    </div>
+</div>    
+<br<br><br><br><br><br><br><br><br><br>>
+
+{% endblock %}

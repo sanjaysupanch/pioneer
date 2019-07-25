@@ -1,33 +1,66 @@
 {% extends 'base.html' %} {% block body %}
+{% load crispy_forms_tags %}
+<style>
+  .text{
+    color:cyan;
+  }
+</style>
 
-<h2>{{ post.title }}</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 left  top">
+      <div class="card-body">
+        <h1>{{ post.title }}</h1><hr>
+        <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
+        <p class="card-text ">{{ post.content | safe }}</p>
+      <h6 class="bg-primary ">.</h6>
+      </div>
+    </div>
+        {% comment %} {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %} {% endcomment %}
 
-<div class="content">
-    <p>
-        {{ post.content }}
-    </p>
-    <span>
-        Written by {{ post.author }}  on {{ post.created_on }}
-    </span>
+  </div>
+    
+    {% if post.comment_set.all %}
+      <h2 class="text">  Comments! </h2>
+    
+      <div class="row">
+        <div class="col-md-8 card mb-4 mt-3 left">
+          <div class="card-body">
+          {% for comment in post.comment_set.all %}
+            <h6 class="bg-dark">.</h6>
+            <h3 >{{comment.name}}<small class=" text-muted "> &nbsp;reply</small></h3>
+            <p class=" text-muted">{{ comment.created_on }}</p>
+            <p class="card-text ">{{ comment.content | safe }}</p>
+            {% comment %} <h6 class="bg-success">.</h6> {% endcomment %}
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+    
+    {% endif %}
+    
 </div>
-{% if post.comment_set.all %}
-  <h2> Comment </h2>
-  <div class="comments">
-    {% for comment in post.comment_set.all %}
-      <p> {{ comment.name }} said on {{ comment.created_on }}
-      <br>{{ comment.content }}</p>
-    {% endfor %}
-{% endif %}
-  <br>
-  {% comment %} ==============><a href="{{post.slug}}">{{post.slug}}</a> {% endcomment %}
-  <h2>Add Comment</h2>
-  <form method="POST">
-    {% csrf_token %}
-    <table>
-    {{ form.as_table }}
-    </table>
-    <input type="submit" name="submit" value="Submit">
-  </form>
-    {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 card mb-6  mt-3   top">
+        <br>
+        <h2 class="bg-primary text-centre" style="text-align:center;">Post a Comment</h2>
+          <form method="POST">
+            {% csrf_token %}
+            
+              {{ form|crispy }}
+            <br>
+            
+            <input type="submit" class="btn btn-primary btn-block" name="submit" value="Submit">
+            <br><br>
+          </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
 
 {% endblock  %}

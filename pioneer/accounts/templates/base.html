@@ -14,7 +14,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
         
     {% block head %}
     <title>Pioneer </title>
@@ -22,9 +23,9 @@
   
   </head>
 
-  <body style="background-image:url('{% static 'accounts/images/13390.jpg' %}');background-size:cover; background-repeat:no-repeat;">
-    
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+  {% comment %} <body style="background-image:url('{% static 'courses/images/16.jpg' %}');background-size:cover;background-repeat:no-repeat; background-attachment:fixed;"> {% endcomment %}
+    <body style="background-color:rgb(0, 210, 210);">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div class="navbar-header">
       <a class="navbar-brand" href="/">Pioneer</a>
     </div>
@@ -37,8 +38,9 @@
             <ul class="navbar-nav mr-auto">
                 <li><a class="nav-link" href="/">Home <span class="fa fa-home"></span></a></li>
                 <li><a class="nav-link" href="/blog">Blog <span class="fa fa-home"></span></a></li>
-                <li><a class="nav-link" href="/accounts/about-us">About Us <span class="fa fa-home"></span></a></li>
-                <li><a class="nav-link" href="/accounts/about-us">Contact Us <span class="fa fa-home"></span></a></li>
+                <li><a class="nav-link" href="/courses/about-us/">About Us <span class="fa fa-home"></span></a></li>
+                <li><a class="nav-link" href="#">Contact Us <span class="fa fa-home"></span></a></li>
+                <li><a class="nav-link" href="/courses">Courses <span class="fa fa-home"></span></a></li>
 
 
             </ul>
@@ -51,13 +53,14 @@
             <ul class="navbar-nav mr-auto">
                 <li><a class="nav-link" href="/">Home <span class="fa fa-home"></span></a></li>
                 <li><a class="nav-link" href="/blog">Blog <span class="fa fa-home"></span></a></li>
-                <li><a class="nav-link" href="/accounts/about-us">About Us <span class="fa fa-home"></span></a></li>
-                <li><a class="nav-link" href="/accounts/about-us">Contact Us <span class="fa fa-home"></span></a></li>
+                <li><a class="nav-link" href="/courses/about-us/">About Us <span class="fa fa-home"></span></a></li>
+                <li><a class="nav-link" href="#">Contact Us <span class="fa fa-home"></span></a></li>
+                <li><a class="nav-link" href="/courses">Courses <span class="fa fa-home"></span></a></li>
 
             </ul>
-                        <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto">
                 <li><a class="nav-link" href='/accounts/login'>Login <span class="fa fa-sign-in-alt"></span></a></li>
-              <li><a class="nav-link" href="/accounts/register">Register <span class="fa fa-user-plus"></span></a></li>
+                <li><a class="nav-link" href="/accounts/register">Register <span class="fa fa-user-plus"></span></a></li>
             </ul>
             {% endif %}
         </div>
@@ -66,12 +69,12 @@
       {% block body %}
       This is base for you
       {% endblock %}
-      <br><br><br><br>
+      {% comment %} <br><br><br><br>
       
-      <footer class="py-3 bg-grey">
-            
+      <footer class="container-fluid bg-4 text-center">
+            <hr>
             <p class="m-0 text-dark text-center ">Copyright &copy; Pioneer</p>
-      </footer>  
+      </footer> {% endcomment %}
   </body>
 
 </html>
