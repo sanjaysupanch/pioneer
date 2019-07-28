@@ -2,41 +2,42 @@
 {% load crispy_forms_tags %}
 {% load staticfiles %}
 {% block head %}
-  <title>USER PROFILE PAGE</title>
+<title>USER PROFILE PAGE</title>
 {% endblock %}
-
-
 {% block body %}
+<center style="background-color:cyan;">
 <br><br><br><br><br>
-<div class="card">
-<div class="card-body">
- <div class="container " id="f4">
-   <div class="row">
-    <div class="col-md-6">
-      <h1 class="display-4" style="font-size:35px;font-weight:400;"> User Profile</h1><br>
-      <p> Username : {{user}} </p>
-      <p> First Name: {{user.first_name}} </p>
-      <p> Last Name: {{user.last_name}} </p>
-      <p> Email: {{user.email}} </p>
-      <p> City: {{user.userprofile.city}} </p>
-      <p> Phone: {{user.userprofile.phone}} </p>
+
+<div style="width:85%;">
+  <div class="card border">
+    <div class="card-body">
+      <div class="container " >
+        <div class="row ">
+          <div class="col-md-5 ">
+            <h1 class="display-4" style="font-size:35px;font-weight:400;"> User Profile</h1>
+              <br>
+              <p> Username : {{user}} </p>
+              <p> First Name: {{user.first_name}} </p>
+              <p> Last Name: {{user.last_name}} </p>
+              <p> Email: {{user.email}} </p>
+              <p> City: {{user.userprofile.city}} </p>
+              <p> Phone: {{user.userprofile.phone}} </p>
+          </div>
+          <div class="col-md-4" ><br><br>&emsp;
+            {% if user.userprofile.image  %}
+               <img src="{{user.userprofile.image.url}}" alt="profile-pic" width="240" style="width:200px;border-radius:50%">
+            {{user.userprofile.image.path}}
+               {% else %}
+                <img src="../../static/accounts/images/profile.png"  style="width:200px;border-radius:50%">
+            {% endif %}
+          </div>
+        </div><br><br><br><br>
+        <div >
+          <a href="edit"><button type="button" class="btn btn-primary btn-block">Change Profile</button></a>
+        </div>
+      </div>
     </div>
-    <div class="col-md-5"  >
-
-      {% if user.userprofile.image  %}
-    <img src="{{user.userprofile.image.url}}" alt="profile-pic" width="240" style="width:200px;border-radius:50%">
-      {{user.userprofile.image.path}}
-    {% else %}
-    <img src="../../static/accounts/images/profile.png"  style="width:200px;border-radius:50%">
-    {% endif %}
-
   </div>
-
-    </div>
-    </div>
- </div>
- </div>
- </div>
-<br>
-
+</div>
+</center>
 {% endblock %}

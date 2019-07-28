@@ -1,0 +1,10 @@
+.a {
+    font: 20px arial, sans-serif;
+    text-indent: 5px;
+}
+
+.b {
+    font: 50px arial, sans-serif;
+    text-indent: 5px;
+    text-decoration-color: blueviolet;
+}

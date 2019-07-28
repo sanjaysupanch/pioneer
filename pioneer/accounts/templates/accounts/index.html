@@ -1,22 +1,193 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-
 {% block head %}
-  <title>HOME</title>
-  
+<title>HOME</title>
+<style>
+    img.two {
+    height: 500px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    }
+</style>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB66kGP6U5bfFSwSCMvkESsVD0N1FErzFQ&callback=myMap"></script>
 {% endblock %}
-
-
-
 {% block body %}
-<div class="container">
-  <div class="">
-    <h1>Welcome to the Pioneer!</h1>
-    {% if user.is_authenticated %}
-        <h2>Hello {{ user.username }}</h2>
-    {% else %}
-        <h2>Register or Login if you'd like to</h2>
-    {% endif %}
-  </div>
+<div style="background-color:cyan" >
+<br><br>
+    <div>
+        <img class="two "  src="../../static/courses/images/13.jpg"  alt="Card image"  >
+    </div>
+    <br><br><br>
+    <div class="container">
+        <div class="text-center">
+            {% if user.is_authenticated %}
+            <h1 class="h1_1">Welcome to the Pioneer! Hello <span class="text-primary">{{ user.username }}<span></h1>
+            <hr>
+            <hr>
+            {% else %}
+            <h1>Let's Study Together! </h1>
+            <hr>
+            <hr>
+            {% endif %}
+        </div>
+    </div>
+    <br><br><br><br> 
+    <section class="cool-facts-area section-padding-100-0 ">
+        <div class="container ">
+            <div class="row">
+                &emsp;&emsp;&emsp;
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-facts-area text-center mb-100 wow fadeInUp bg-light">
+                        <div class="icon">
+                            <img src="../../static/accounts/images/docs.png" alt="">
+                        </div>
+                        <b >
+                            <h2 class="timer counter count-title count-number" data-to="1000" data-speed="4000"></h2>
+                        </b>
+                        <h5>Success Stories</h5>
+                    </div>
+                </div>
+                &emsp;&emsp;&emsp;&emsp;&emsp;
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-facts-area text-center mb-100 wow fadeInUp bg-light">
+                        <div class="icon">
+                            <img src="../../static/accounts/images/earth.png" alt="">
+                        </div>
+                        <b >
+                            <h2 class="timer counter count-title count-number" data-to="9000"  data-speed="4000"></h2>
+                        </b>
+                        <h5>Students</h5>
+                    </div>
+                </div>
+                &emsp;&emsp;&emsp;&emsp;&emsp;
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-facts-area text-center mb-100 wow fadeInUp bg-light">
+                        <div class="icon">
+                            <img src="../../static/accounts/images/events.png" alt="">
+                        </div>
+                        <b >
+                            <h2 class="timer counter count-title count-number" data-to="10" data-speed="4000"></h2>
+                        </b>
+                        <h5>Years</h5>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+    <br><br><br><br>
+    <!---==================================Courses===============================================-->
+    <div class="container">
+        <h1 class="text-center h1_1">Popular Courses</h1>
+        <hr>
+        <hr>
+        <br><br><br><br>
+        <div class="card-deck" style="width:98%; padding-left:3%;">
+            <div class="card" >
+                <img class="card-img-top" src="../../static/courses/images/3.jpg" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">From Basic Level to Advance Level</h4>
+                    <p class="card-text">
+                    <blockquote>To learn English at an advanced level,
+                        you must be clear at your basic level.
+                    </blockquote>
+                    </p>
+                    <a href="courses/b-to-adv/" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+            <div class="card" >
+                <img class="card-img-top" src="../../static/courses/images/11.jpg" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Art of Speaking</h4>
+                    <p class="card-text">
+                    <blockquote>Mastering the art of speaking is the key
+                        to confidently delivering a potent message to an audience.
+                    </blockquote>
+                    </p>
+                    <a href="courses/speaking" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+            <div class="card" >
+                <img class="card-img-top" src="../../static/courses/images/4.jpg" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Vocabulary</h4>
+                    <p class="card-text">Vocabulary is a matter of word-building as well as word-using</p>
+                    <a href="courses/vocabulary" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <br><br><br><br><br>
+    <center>
+        <h1 class="text-center h1_1 container ">
+            Instructor
+            <hr>
+            <hr>
+        </h1>
+        <br>
+        <div class="card-deck b " style="width:80%;" >
+            <div class="card" >
+                <img class="card-img-top" src="../../static/courses/images/t2.png" height="300" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">XYZ</h4>
+                    <p class="card-text">
+                    <blockquote>.</blockquote>
+                    </p>
+                </div>
+            </div>
+            &emsp;&emsp;&emsp;
+            <div class="card" >
+                <img class="card-img-top" src="../../static/courses/images/t4.png" height="300" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">XYZ</h4>
+                    <p class="card-text">.</p>
+                </div>
+            </div>
+        </div>
+    </center>
+    <br><br><br><br><br><br>
+    <!--================================Contact Us======================================-->
+    <div style="background-color:#f0f0f5"><br><br>
+        <h2 id="contact_us" class="h1_1 text-center">Contact Us</h2><hr><br><br><br>
+        <div class="container-fluid" >
+            <div class="row">
+                <div class="col-sm-4"><br>
+                    <div class="contact_us">Our Address:</div>
+                    <div class="a1">
+                        <img src="../../static/accounts/images/loca.png" style="height:25px;weight:35px;">
+                        Pioneer House, Saket Nagar, Deoria,<br>&emsp;&emsp;Deoria District, Uttar Pradesh - 274001.
+                    </div>
+                    <div class="a1">
+                        <img src="../../static/accounts/images/loca.png" style="height:25px;weight:35px;">
+                        Pioneer, Raghav Nagar, Deoria,<br>&emsp;&emsp;Deoria District, Uttar Pradesh - 274001.
+                    </div>
+                    <br>
+                    <div class="contact_us">You can also reach us at:</div>
+                    <div class="a1">
+                        <img src="../../static/accounts/images/call.png" style="height:25px;weight:35px;">
+                        Tel:7676897890<br>&emsp;
+                        Mobile:+91-8097561256<br><br>
+                    </div>
+                    <div class="contact_us">Mail us at:</div>
+                    <div class="a1">
+                        <img src="../../static/accounts/images/34.png" style="height:25px;weight:35px;">
+                        <big>pioneer.deo@gmail.com</big>
+                    </div>
+                </div>&emsp;&emsp;&emsp;
+                <div class="col-sm-7">
+                    <div class="mapouter">
+                        <div class="gmap_canvas"><br><br>
+                            <iframe width="800" height="350" id="gmap_canvas" src="https://maps.google.com/maps?q=Pioneer%20house%20saket%20nagar%20Deoria&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                frameborder="-1" scrolling="yes" marginheight="0" marginwidth="0">
+                            </iframe>
+                            <a href="https://www.embedgooglemap.net/blog/best-wordpress-themes/"></a>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+        </div>
+    </div>
 </div>
 {% endblock %}

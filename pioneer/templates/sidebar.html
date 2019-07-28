@@ -1,22 +1,33 @@
 {% block sidebar %}
-
 <style>
-        .card{
-            box-shadow: 0 16px 48px #E3E7EB;
+    .card{
+    box-shadow: 0 16px 48px #E3E7EB;
+    }
+    <script>
+        function goBack() {
+        window.history.back();
         }
-       
+    </script>
 </style>
-
 <!-- Sidebar Widgets Column -->
 <div class="col-md-4 float-right ">
-<div class="card my-4">
+    <div class="card my-4">
         <h5 class="card-header">About Us</h5>
-    <div class="card-body">
-        <p class="card-text"> This awesome blog is made on the top of our Favourite full stack Framework 'Django', follow up the tutorial to learn how we made it..!</p>
-        <a href="about_us"
-           class="btn btn-danger">Know more!</a>
+        <div class="card-body">
+            <p class="card-text">Pioneer English Classes is an institute that aids in the development and refin- ement of one's English communication skills.
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 
+                <a href="/../courses/about-us"
+                    class="btn btn-danger">Know more!</a>
+        </div>
+    </div>
+    <div class="card my-4">
+        <h5 class="card-header">Post a Blog</h5>
+        <div class="card-body">
+            <p class="card-text text-info">Only Admin can post a blog.
+            <a href="/blog/add" class="btn btn-success">Click here!</a>
+        </div>
     </div>
 </div>
-</div>
+
 
 {% endblock sidebar %}
