@@ -6,8 +6,7 @@
 {% endblock %}
 {% block body %}
 <center style="background-color:cyan;">
-<br><br><br><br><br>
-
+<br><br><br>
 <div style="width:85%;">
   <div class="card border">
     <div class="card-body">
@@ -25,8 +24,8 @@
           </div>
           <div class="col-md-4" ><br><br>&emsp;
             {% if user.userprofile.image  %}
-               <img src="{{user.userprofile.image.url}}" alt="profile-pic" width="240" style="width:200px;border-radius:50%">
-            {{user.userprofile.image.path}}
+               <img src="{{user.userprofile.image.url}}" alt="profile-pic"  style="width:210px; border-radius:50%">
+            {% comment %} {{user.userprofile.image.path}} {% endcomment %}
                {% else %}
                 <img src="../../static/accounts/images/profile.png"  style="width:200px;border-radius:50%">
             {% endif %}
@@ -38,6 +37,6 @@
       </div>
     </div>
   </div>
-</div>
+</div><br><br>
 </center>
 {% endblock %}

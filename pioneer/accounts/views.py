@@ -85,7 +85,8 @@ def edit_profile(request):        #edit profile view
             form.save()
             UserProfile.objects.filter(user=request.user).update(city=request.POST['city'])
             UserProfile.objects.filter(user=request.user).update(phone=request.POST['phone'])
-            
+            # UserProfile.objects.filter(user=request.user).update(image=request.POST['image'])
+
             return redirect('/accounts/profile')
         # else:
         #     return HttpResponse("form  is invalid")

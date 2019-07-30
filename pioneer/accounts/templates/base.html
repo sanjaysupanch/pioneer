@@ -20,7 +20,7 @@
     <body style="background-image:url('{% static 'courses/images/16.jpg' %}');background-size:cover;background-repeat:no-repeat; background-attachment:fixed;">
         {% endcomment %}
         <body style="background-color:white">
-            <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
+            <nav class="navbar navbar-expand-md bg-info navbar-dark side-nav ">
                 <div class="navbar-header">
                   <a class="navbar-brand" href="/">Pioneer</a>
                 </div>
@@ -56,44 +56,6 @@
                     {% endif %}
                 </div>
             </nav>
-            {% comment %} 
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/">Pioneer</a>
-                </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    {% if user.is_authenticated %}
-                    <ul class="navbar-nav mr-auto">
-                        <li><a class="nav-link" href="/">Home <span class="fa fa-home"></span></a></li>
-                        <li><a class="nav-link" href="/blog">Blog <span class="fa fa-home"></span></a></li>
-                        <li><a class="nav-link" href="/courses/about-us/">About Us <span class="fa fa-home"></span></a></li>
-                        <li><a class="nav-link" href="/courses">Courses <span class="fa fa-home"></span></a></li>
-                        <li><a class="nav-link" href="/#contact_us">Contact Us <span class="fa fa-home"></span></a></li>
-                        <li><a class="nav-link" href="https://dictionary.cambridge.org/dictionary/">Dictionary <span class="fa fa-home"></span></a></li>
-                    </ul>
-                    <ul class="navbar-nav ml-auto">
-                        <li><a class="nav-link" href='/accounts/profile'>Profile <span class="fa fa-user"></span></a></li>
-                        <li><a class="nav-link" href='/logout'>Logout <span class="fa fa-sign-out-alt"></span></a></li>
-                    </ul>
-                    {% else %}
-                    <ul class="navbar-nav mr-auto">
-                        <li><a class="nav-link" href="/">Home <span class="fa fa-home"></span></a></li>
-                        <li><a class="nav-link" href="/blog">Blog <span class="fa fa-home"></span></a></li>
-                        <li><a class="nav-link" href="/courses/about-us/">About Us <span class="fa fa-home"></span></a></li>
-                        <li><a class="nav-link" href="/#contact_us">Contact Us <span class="fa fa-home"></span></a></li>
-                        <li><a class="nav-link" href="/courses">Courses <span class="fa fa-home"></span></a></li>
-                    </ul>
-                    <ul class="navbar-nav ml-auto">
-                        <li><a class="nav-link" href='/accounts/login'>Login <span class="fa fa-sign-in-alt"></span></a></li>
-                        <li><a class="nav-link" href="/accounts/register">Register <span class="fa fa-user-plus"></span></a></li>
-                    </ul>
-                    {% endif %}<br>
-                </div>
-            </nav>
-            {% endcomment %}
             {% block body %}
             This is base for you
             {% endblock %}
