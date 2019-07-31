@@ -3,9 +3,10 @@ from django.shortcuts import render,redirect, HttpResponse, get_object_or_404
 from blog.models import *
 from django.contrib.auth.models import User
 from blog.forms import *
-from django.contrib.auth.decorators import user_passes_test
+from django.contrib.auth.decorators import login_required, user_passes_test
 
-@user_passes_test(lambda u: u.is_superuser)
+#@user_passes_test(lambda u: u.is_superuser)
+@login_required
 def add_blog(request):
     
     if request.method == 'POST':

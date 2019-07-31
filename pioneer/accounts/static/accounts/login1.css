@@ -76,3 +76,22 @@
 	.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
 	    background-color: #c0392b !important;
 	}
+	
+	#logo {
+	    float: left;
+	    /* height: 100px; */
+	}
+	/* .menu:hover {
+	    color: #0b7dda;
+	}
+	 */
+	
+	.spin {
+	    animation: spin 4s linear infinite;
+	}
+	
+	@keyframes spin {
+	    100% {
+	        transform: rotatey(180deg);
+	    }
+	}

@@ -20,7 +20,7 @@
 </style>
 {% endblock %}
 {% block body %}
-<div style="background-color:cyan">  
+<div style="background-color:#bbb">  
 
     <br><br><br>
 
@@ -54,10 +54,10 @@
                                         </form>
                                     </div>
                                 </div>
-                                {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}  
+                                {% comment %} {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}   {% endcomment %}
                             </div>
                             
                 </div>
-            </div>
+            </div><br><br><br>
 </div>
 {% endblock %}
