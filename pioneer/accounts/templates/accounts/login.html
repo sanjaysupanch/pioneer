@@ -2,8 +2,9 @@
 {% load staticfiles %}
 
 {% block head %}
-
+    <title>Login Page</title>
     <style>
+    
 
     	body,
 	html {
@@ -90,6 +91,13 @@
 
 {% block body %}
 
+{% comment %} <script type="text/javascript">
+    $(function(){
+
+        $("#id_username").addClass("form-control");
+        $("#id_password").addClass("form-control");
+});
+  </script> {% endcomment %}
 
  
 	<div class="container h-100">
@@ -107,14 +115,14 @@
             {% csrf_token %}
 						<div class="input-group mb-3">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
+								<span class="input-group-text"><i class="fa fa-user"></i></span>
 							</div>
                 {{ form.username }}
 							{% comment %} <input type="text" name="" class="form-control input_user" value="" placeholder="username"> {% endcomment %}
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
+								<span class="input-group-text"><i class="fa fa-key"></i></span>
 							</div>
               {{ form.password }}
 							{% comment %} <input type="password" name="" class="form-control input_pass" value="" placeholder="password"> {% endcomment %}
