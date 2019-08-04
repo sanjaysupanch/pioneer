@@ -3,11 +3,17 @@
 
 {% block head %}
     <title>Login Page</title>
-   
-{% endblock %}
+    
+    <style>
+    {% comment %} body{
+        background-image:url('../../static/courses/images/25.jpg');background-size:cover;background-repeat:no-repeat;
+    }
+    </style>
+    {% endcomment %}
 
 
-{% block body %}
+
+
 
 <script type="text/javascript">
     $(function(){
@@ -16,7 +22,10 @@
         $("#id_password").addClass("form-control");
 });
   </script> 
-
+  </style>
+  {% endblock %}
+{% block body %}
+<br><br><br><br><br><br>
  
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
@@ -31,13 +40,17 @@
           
           <form method="post" autocomplete="on">
             {% csrf_token %}
+            <span class="text-grey ">Username<span class="text-danger ">*</span> </span><br>
 						<div class="input-group mb-3">
+              
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fa fa-user"></i></span>
 							</div>
+
                 {{ form.username }}
 							{% comment %} <input type="text" name="" class="form-control input_user" value="" placeholder="username"> {% endcomment %}
 						</div>
+            <span class="text-grey ">Password<span class="text-danger ">*</span> </span><br>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fa fa-key"></i></span>
@@ -69,8 +82,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
+</div><br><br><br>
 
 
   {% comment %} <div class="card" style="margin-left: 55px;border-radius: 15px;width: 500px;height: 520px;">

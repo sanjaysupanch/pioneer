@@ -40,6 +40,7 @@ def register(request):
                 profile.image = request.FILES['image']
             profile.save()
             registered = True
+            return redirect("/")
         else:
             print(user_form.errors,profile_form.errors)
     else:

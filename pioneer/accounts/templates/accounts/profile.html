@@ -3,17 +3,25 @@
 {% load staticfiles %}
 {% block head %}
 <title>USER PROFILE PAGE</title>
+  <style>
+     .col1 {width:50%;}
+    @media only screen and (max-width: 768px) {
+        .col1{
+        width: 90%;
+  }
+  </style>
+
 {% endblock %}
 {% block body %}
-<center style="background-color:cyan;">
+<center style="background-color:#f39c12;">
 <br><br><br>
-<div style="width:85%;">
+<div class="col1">
   <div class="card border">
     <div class="card-body">
       <div class="container " >
-        <div class="row ">
+        <div class="row">
           <div class="col-md-5 ">
-            <h1 class="display-4" style="font-size:35px;font-weight:400;"> User Profile</h1>
+            <h1 class="display-4 " style="font-size:35px;font-weight:400;"> User Profile</h1><hr>
               <br>
               <p> Username : {{user}} </p>
               <p> First Name: {{user.first_name}} </p>
@@ -37,6 +45,6 @@
       </div>
     </div>
   </div>
-</div><br><br>
+</div><br><br><br>
 </center>
 {% endblock %}
