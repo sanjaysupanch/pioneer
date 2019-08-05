@@ -20,37 +20,35 @@
 </style>
 {% endblock %}
 {% block body %}
-<div style="background-color:#bbb">  
+<div style="background-color:#f39c12;">  
 
-    <br><br><br>
-
+<br><br>
             <header class="masthead ">
                 <div class="overlay"></div>
                 <div class="container">
                     <div class="row">
                         <div class=" col-md-8 col-md-10 mx-auto">
                             <div class="site-heading">
-                                <h3 class=" site-heading my-4 mt-3 text-info"> Welcome to Pioneer Blog </h3>
-                                <p class="text-success">We Love Django As much as you do..! &nbsp;
+                                <h3 class="text-center site-heading my-4 mt-3 font-weight-bold "> Add Blog Here<hr> </h3>
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </header>
-            <div class="container-fluid">
-                <div class="row">
+            </header><br>
+            <div class="container ">
+                <div class="row ">
                     
                             <!-- Blog Entries Column -->
                             
-                            <div class="col-md-8 col-md-10 mx-auto ">
-                                <div class="card w-100">
+                            <div class="col-md-8 col-md-10 mx-auto  ">
+                                <div class="card w-100 young-passion-gradient">
                                     <div class="card-body ">
-                                        <form method='post'>
+                                        <form method='post' >
                                             {% csrf_token %}
-                                            {{ form.as_p }}
+                                            {{ form|crispy }}
                                             
-                                            <input type="submit" class="btn btn-primary w-25" value="submit">
+                                            <input type="submit" class="btn aqua-gradient w-50" value="submit">
                                         </form>
                                     </div>
                                 </div>
