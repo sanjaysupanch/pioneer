@@ -12,9 +12,9 @@
         
     }
     
-    .card {
+    {% comment %} .card {
         box-shadow: 0 16px 48px ;#E3E7EB;
-    }
+    } {% endcomment %}
 </style>
 <div style="background-color:#f39c12;">
 <header class="masthead">
@@ -49,6 +49,6 @@
         </div>
         {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
     </div>
-</div><br>
+</div><br><br><br>
 </div>
 {% endblock %}

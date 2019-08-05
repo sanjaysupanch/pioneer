@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect, HttpResponse
-from accounts.forms import add_registration_form,RegistrationForm, ChangeProfileForm, EditProfileForm
+from .forms import add_registration_form,RegistrationForm, ChangeProfileForm, EditProfileForm
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
@@ -40,7 +40,7 @@ def register(request):
                 profile.image = request.FILES['image']
             profile.save()
             registered = True
-            return redirect("/")
+            # return redirect("/")
         else:
             print(user_form.errors,profile_form.errors)
     else:
@@ -89,8 +89,8 @@ def edit_profile(request):        #edit profile view
             # UserProfile.objects.filter(user=request.user).update(image=request.POST['image'])
 
             return redirect('/accounts/profile')
-        # else:
-        #     return HttpResponse("form  is invalid")
+        else:
+            return HttpResponse("form  is invalid")
 
     else:
         form=EditProfileForm(instance=request.user)

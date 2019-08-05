@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserChangeForm
-from accounts.models import UserProfile
+from .models import UserProfile
 from django.contrib.auth.models import User
 from django.core.validators import validate_email
 
@@ -50,7 +50,7 @@ class RegistrationForm(forms.ModelForm):
 class add_registration_form(forms.ModelForm):
     city  = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter city name.'}), required=True, max_length=50)
     phone = forms.IntegerField(widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter Mobile number.'}),required=True)
-    image = forms.ImageField()
+    #image = forms.ImageField()
     class Meta:
         model = UserProfile
         fields=['city', 'phone', 'image']
