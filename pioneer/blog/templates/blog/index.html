@@ -1,26 +1,25 @@
 {% extends "base.html" %} 
 {% block body %}
 <style>
-    body {
+    {% comment %} body {
     font-family: "Roboto", sans-serif;
     font-size: 18px;
     }
     .head_text {
     color: white;
-    }
+    } {% endcomment %}
     {% comment %} .card {
     box-shadow: 0 16px 48px ;#E3E7EB;
     } {% endcomment %}
 </style>
-<div style="background-color:#f39c12;">
+<div style="background-color:#f39c1;">
     <header class="masthead">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
                 <div class=" col-md-8 col-md-10 mx-auto">
-                    <div class="site-heading">
-                        <h1 class=" site-heading my-4 mt-3 font-weight-bold deep-orange-lighter-hover mb-3"> Welcome to my awesome Blog </h1>
-                        <p class="text-light"><b>We Love Pioneer As much as you do..!<b> &nbsp;
+                    <div class="site-heading"><br><br>
+                        <h1 class=" site-heading b"> Welcome to my awesome Blog <hr></h1>
                         <hr>
                         </p>
                     </div>
@@ -31,7 +30,7 @@
     <div class="container">
         <div class="row">
             <!-- Blog Entries Column -->
-            <div class="col-md-8 mt-3 left">
+            <div class="col-md-8 mt-3 ">
                 {% for post in post1 %}
                 <div class="card mb-4">
                     <div class="card-body">
@@ -49,5 +48,5 @@
         </div>
     </div>
     <br><br><br>
-</div>
+</div><br>
 {% endblock %}

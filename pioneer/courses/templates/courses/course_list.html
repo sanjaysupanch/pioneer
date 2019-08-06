@@ -3,24 +3,63 @@
 
 {% block head %}
     <style>
-        .two {
-        height: 25rem;
-        width: 100%;
+
+    .parallax {
+        background-image: url("../../static/courses/images/26.jpg");
+        min-height: 550px; 
+        width:100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        color:white;
 }
-    </style>
+     .pad{
+         padding-left:550px;
+     }
+     .display{
+         font-size: 4.5rem;
+         font-weight: 300;
+         line-height: 8.5;
+     }
+     
+     @media only screen and (max-width: 768px) {
+       .parallax {
+            background-image: url("../../static/courses/images/26.jpg");
+            min-height: 250px; 
+            width:100%;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            color:white;
+        }
+    
+        .pad{
+             padding-left:30px;
+    
+        }
+        .display{
+            font-size: 4.5rem;
+            font-weight: 300;
+            line-height: 5;
+            
+       }
+     
+     
+  }
 
+</style>
 {% endblock %}
-
 {% block body %}
-
-<div style="background-color:rgb(230, 230, 230)">
+<div style="background-color:#f5f5f5" >
     <div class="parallax">
-        <img class="two " src="../../static/courses/images/16.jpg"  alt="Card image"  >
+        <span class=" display" ><b class="pad ">Courses<b></span>
     </div>
 
     
     <br><br><br>
-    <h1 class="text-center"> Courses<hr></h1>
+    {% comment %} <h1 class="text-center"> Courses<hr></h1> {% endcomment %}
     <br><br>
 <div class="card-deck" style="width:98%; padding-left:3%;">
   

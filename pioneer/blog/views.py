@@ -40,5 +40,5 @@ def view_post(request, slug):
     return render(request, "blog/post_detail.html", arg)
 
 def show(request):
-    post1= Post.objects.filter(status=1).order_by('-created_on')
+    post1= Post.objects.filter(status=1).order_by('-created_on')[:8]
     return render(request, "blog/index.html", {'post1':post1})

@@ -3,18 +3,34 @@
 {% block head %}
 <title>HOME</title>
 <style>
-    .two {
-    /* The image used */
-    background-image: url("../../static/courses/images/13.jpg");
-    height: 400px;
-    width: 100%;
-    }
+    
+    .parallax {
+        background-image: url("../../static/courses/images/13.jpg");
+        min-height: 550px; 
+        width:100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+}
+    
+     @media only screen and (max-width: 450px) {
+       .parallax {
+            background-image: url("../../static/courses/images/13.jpg");
+            min-height: 350px; 
+            width:100%;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+  }
+
 </style>
 {% endblock %}
 {% block body %}
 <div style="background-color:#f5f5f5" >
-    <div class="">
-        <img class="two "  src="../../static/courses/images/13.jpg"  alt="card image"  >
+    <div class="parallax">
     </div>
     <br><br><br>
     <div class="container">
@@ -31,10 +47,10 @@
         </div>
     </div>
     <br><br><br><br> 
-    <section class="cool-facts-area section-padding-90-0 ">
+    <section class="cool-facts-area ">
         <div class="container ">
-            <div class="row">
-                <div class="col-12 col-sm-6   col-lg-3">
+            <div class="row mx-auto">
+                <div class="col-lg-4 col-sm-4   col-md-3">
                     <div class="single-cool-facts-area text-center mb-100 wow fadeInUp bg-grey">
                         <div class="icon">
                             <img src="../../static/accounts/images/docs.png" alt="">
@@ -45,8 +61,8 @@
                         <h5>Success Stories</h5>
                     </div>
                 </div>
-                &emsp;&emsp;&emsp;&emsp;&emsp;
-                <div class="col-12 col-sm-6 col-lg-3">
+                
+                <div class="col-lg-4 col-sm-4 col-md-3">
                     <div class="single-cool-facts-area text-center mb-100 wow fadeInUp bg-grey">
                         <div class="icon">
                             <img src="../../static/accounts/images/earth.png" alt="">
@@ -57,8 +73,8 @@
                         <h5>Students</h5>
                     </div>
                 </div>
-                &emsp;&emsp;&emsp;&emsp;&emsp;
-                <div class="col-12 col-sm-6 col-lg-3">
+                
+                <div class="col-lg-4 col-sm-4 col-md-3">
                     <div class="single-cool-facts-area text-center mb-100 wow fadeInUp bg-grey">
                         <div class="icon">
                             <img src="../../static/accounts/images/events.png" alt="">
@@ -80,9 +96,9 @@
         <hr>
         <hr>
         <br><br><br><br>
-        <div class="card-deck" style="width:98%; padding-left:3%;">
-            <div class="card" >
-                <img class="card-img-top" src="../../static/courses/images/3.jpg" alt="Card image">
+        <div class="card-deck" style="width:98%; padding-left:4%;">
+6        <div class="card" >
+                <img class="card-img-top" src="../../static/courses/images/4.jpg" al6="Card image">
                 <div class="card-body">
                     <h4 class="card-title">From Basic Level to Advance Level</h4>
                     <p class="card-text">
@@ -135,7 +151,7 @@
                                 alt="Sample avatar image.">
                             </div>
                             <div class="card-body">
-                                <h4 class="font-weight-bold mb-3">Brijesh Singh</h4>
+                                <h4 class="font-weight-bold mb-4">Brijesh Singh</h4>
                                 <p class="font-weight-bold blue-text">Learner & Trainer</p>
                             </div>
                         </div>
@@ -164,7 +180,7 @@
                                 alt="Sample avatar image.">
                             </div>
                             <div class="card-body">
-                                <h4 class="font-weight-bold mb-3">Marie Johnson</h4>
+                                <h4 class="font-weight-bold mb-4">Marie Johnson</h4>
                                 <p class="font-weight-bold blue-text">Trainer</p>
                             </div>
                         </div>
