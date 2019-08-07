@@ -49,14 +49,14 @@
         <body style="background-image:url('../../static/courses/images/25.jpg');background-size:cover;background-repeat:no-repeat;background-width:100%">
             <nav class="navbar navbar-expand-md  navbar-light  fixed-top" style="background-color:#f5f5f5">
                 <div class="navbar-header">
-                  <a class="navbar-brand" href="/">Pioneer</a>
+                  <a class="navbar-brand" style="font-family:'Roboto-Bold-eot'"href="/">Pioneer</a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <div class="collapse navbar-collapse container" id="collapsibleNavbar" style="font-family:'Roboto-Bold-eot'">
                     {% if user.is_authenticated %}
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav  mr-auto">
                         <li><a class="nav-link" href="/">Home <span class="fa fa-home"></span></a></li>
                         <li><a class="nav-link" href="/blog">Blog <span class="fa fa-caret-up"></span></a></li>
                         <li><a class="nav-link" href="/courses/about-us/">About Us <span class="fa fa-tg"></span></a></li>
