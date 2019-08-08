@@ -1,25 +1,24 @@
 {% extends "base.html" %} 
 {% block body %}
 <style>
-    {% comment %} body {
-    font-family: "Roboto", sans-serif;
-    font-size: 18px;
-    }
-    .head_text {
-    color: white;
-    } {% endcomment %}
-    {% comment %} .card {
-    box-shadow: 0 16px 48px ;#E3E7EB;
-    } {% endcomment %}
-</style>
+     .col1 {padding-right:25%;}
+    @media only screen and (max-width: 768px) {
+        .col1{
+        padding-right: 8%;
+  }
+  </style>
 <div>
     <header class="masthead">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
                 <div class=" col-md-8 col-md-10 mx-auto">
-                    <div class="site-heading"><br><br>
-                        <h1 class=" site-heading text-light  "> Welcome to my awesome Blog <hr></h1>
+                    <div class="site-heading">
+                        <br><br>
+                        <h1 class=" site-heading text-light  ">
+                            Welcome to my awesome Blog 
+                            <hr>
+                        </h1>
                         </p>
                     </div>
                 </div>
@@ -30,7 +29,7 @@
         <div class="row">
             <!-- Blog Entries Column -->
             <div class="col-md-8 mt-3 ">
-                {% for post in post1 %}
+                {% for post in post2 %}
                 <div class="card mb-4">
                     <div class="card-body">
                         <h2 class="card-title">{{ post.title }}</h2>
@@ -46,6 +45,32 @@
             {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
         </div>
     </div>
-    <br><br><br>
-</div><br>
+</div>
+<br>
+<!--======================================PAGINATION===========================================================-->
+    <div class=" container b col1">
+        <div class=" card peach-gradient ">
+            {% if post2.has_other_pages %}
+            <ul class="pagination">
+                {% if post2.has_previous %}
+                <li><a href="?page={{ post2.previous_page_number }}">&laquo;&nbsp;</a></li>
+                {% else %}
+                <li class="disabled"><span>&laquo;&nbsp;</span></li>
+                {% endif %}
+                {% for i in post2.paginator.page_range %}
+                {% if post2.number == i %}
+                <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                {% else %}
+                <li><a href="?page={{ i }}">{{ i }}&nbsp;</a></li>
+                {% endif %}
+                {% endfor %}
+                {% if post2.has_next %}
+                <li><a href="?page={{ post2.next_page_number }}">&raquo;&nbsp;</a></li>
+                {% else %}
+                <li class="disabled"><span>&raquo;&nbsp;</span></li>
+                {% endif %}
+            </ul>
+            {% endif %}
+</div>
+</div><br><br>
 {% endblock %}

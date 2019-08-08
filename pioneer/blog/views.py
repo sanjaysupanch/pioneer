@@ -1,9 +1,10 @@
 from django.views import generic
 from django.shortcuts import render,redirect, HttpResponse, get_object_or_404
-from blog.models import *
+from .models import *
 from django.contrib.auth.models import User
-from blog.forms import *
+from .forms import *
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 #@user_passes_test(lambda u: u.is_superuser)
 @login_required
@@ -40,5 +41,14 @@ def view_post(request, slug):
     return render(request, "blog/post_detail.html", arg)
 
 def show(request):
-    post1= Post.objects.filter(status=1).order_by('-created_on')[:10]
-    return render(request, "blog/index.html", {'post1':post1})
+    post1= Post.objects.filter(status=1).order_by('-created_on')
+    page = request.GET.get('page', 1)
+
+    paginator = Paginator(post1, 5)
+    try:
+        post2 = paginator.page(page)
+    except PageNotAnInteger:
+        post2 = paginator.page(1)
+    except EmptyPage:
+        post2 = paginator.page(paginator.num_pages)
+    return render(request, "blog/index.html", {'post1':post1, 'post2':post2})
