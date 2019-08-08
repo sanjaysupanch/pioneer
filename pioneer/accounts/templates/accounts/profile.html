@@ -23,12 +23,12 @@
           <div class="col-md-5 ">
             <h1 class="display-4 " style="font-size:35px;font-weight:400;"> User Profile</h1><hr>
               <br>
-              <p> Username : {{user}} </p>
-              <p> First Name: {{user.first_name}} </p>
-              <p> Last Name: {{user.last_name}} </p>
-              <p> Email: {{user.email}} </p>
-              <p> City: {{user.userprofile.city}} </p>
-              <p> Phone: {{user.userprofile.phone}} </p>
+              <p class="text-left"> Username : {{user}} </p>
+              <p class="text-left"> First Name: {{user.first_name}} </p>
+              <p class="text-left"> Last Name: {{user.last_name}} </p>
+              <p class="text-left"> Email: {{user.email}} </p>
+              <p class="text-left"> City: {{user.userprofile.city}} </p>
+              <p class="text-left"> Phone: {{user.userprofile.phone}} </p>
           </div>
           <div class="col-md-4" ><br><br>&emsp;
             {% if user.userprofile.image  %}

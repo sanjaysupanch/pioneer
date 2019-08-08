@@ -6,14 +6,29 @@
         .form-control {
             width: 100%;
         }
+        .pad{
+            padding-left:30%;
+        }
+          .col1 {width:50%;}
+    
+    @media only screen and (max-width: 768px) {
+        .col1{
+            width: 95%;
+        }
+        .pad{
+            padding-left:2%;
+        }
+  }
     </style>
 {% endblock %}
 
 {% block body %}
-    <div class="card">
+    <br>
+<div class="pad">
+    <div class="card col1" >
         <div class="card-body">
-            <h1 class="text-center">Edit Profile</h1><br>
-            <div class="container" style="width:60%;">
+            <h1 class="text-center"><i>Edit Profile</i><hr></h1><br>
+            <div class="container " >
                 <form method="post">
                     {% csrf_token %}
                     
@@ -35,4 +50,5 @@
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
