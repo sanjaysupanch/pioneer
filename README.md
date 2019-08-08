@@ -4,4 +4,4 @@
 <p>After run this command run <br><b>-> pip install -r requirement.txt</b></p>
 <p>After run this command run <br><b>-> python manage.py runserver</b></p>
  
- <p> Note: Change in setting.py put your mysql name and password and also create <i>pioneer</i> database</p>
+ <p> Note: Change in setting.py put your mysql name and password and also create <b>pioneer</b> database</p>
