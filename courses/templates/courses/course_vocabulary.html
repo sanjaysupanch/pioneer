@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <style>
+        img.two { height: 450px; width: 100%;}
+        .san { font-family:cursive; }
+
+    </style>
+
+{% endblock %}
+
+{% block body %}
+
+<div style="background-color:cyan">
+    
+    <img class="two"  src="../../static/courses/images/13.jpg"  alt="Card image" height:"50" >
+    <br><br><br><br>
+    <h1 class="text-center san" >Vocabulary</h1>
+        <br><br>
+        <ul class=" container list-group">
+            <li class="list-group-item">1. &nbsp;Common Errors</li>
+            <li class="list-group-item">2. &nbsp;Sentence Improvement</li>
+            <li class="list-group-item">3. &nbsp;Fillers</li>
+            <li class="list-group-item">4. &nbsp;Spellings Errors</li>
+            <li class="list-group-item">5. &nbsp;Para Jumble</li>
+            <li class="list-group-item">6. &nbsp;Precis</li>
+            <li class="list-group-item">7. &nbsp;Comprehension</li>
+            <li class="list-group-item">8. &nbsp;Close Test</li>
+            <li class="list-group-item">9. &nbsp;Solved / Unslolved</li>
+            <li class="list-group-item">10. Practice Test</li>
+            <li class="list-group-item">11. Time and Weather</li>
+            <li class="list-group-item">12. Law and Order</li>
+            
+        </ul><br>
+
+</div>
+{% endblock %}

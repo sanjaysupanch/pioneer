@@ -1,0 +1,74 @@
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) {}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {}
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: landscape) {}
+
+.single-cool-facts-area {
+    position: relative;
+    z-index: 1;
+    padding: 30px;
+    border: 1px solid #5dd0df;
+    font: outline;
+    border-radius: 6px
+}
+
+.single-cool-facts-area img {
+    display: block;
+    margin: 0 auto 15px
+}
+
+.single-cool-facts-area h2 {
+    font-size: 36px;
+    margin-bottom: 5px;
+    color: #3f66e6
+}
+
+.single-cool-facts-area h5 {
+    margin-bottom: 0;
+    font-size: 18px;
+    color: rgba(0, 0, 0, .8)
+}
+
+
+/* map*/
+
+.mapouter {
+    position: relative;
+    text-align: right;
+    height: 100%;
+    width: 100%;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none!important;
+    height: 100%;
+    width: 100%;
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(../accounts/mister.ttf);
+}
+
+.h1_1 {
+    font-family: Times;
+    color: #093f6b;
+    font-size: 50px;
+}
+
+.ha {
+    font-family: Times;
+    color: #093f6b;
+}
+
+.contact_us {
+    font-family: Times;
+    font-size: 35px;
+    color: #2196F3
+}
+
+.a1 {
+    padding-left: 30px
+}

@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<style>
+        .parallax {
+        background-image: url("../../static/courses/images/20.jpg");
+        min-height: 550px; 
+        width:100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+     @media only screen and (max-width: 768px) {
+       .parallax {
+            background-image: url("../../static/courses/images/20.jpg");
+            min-height: 350px; 
+            width:100%;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+  }
+       .parallax1 {
+        background-image: url("../../static/courses/images/14.jpg");
+        min-height: 550px; 
+        width:100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+     @media only screen and (max-width: 768px) {
+       .parallax1 {
+            background-image: url("../../static/courses/images/14.jpg");
+            min-height: 10px; 
+            width:100%;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+  }
+
+</style>
+{% endblock %}
+{% block body %}
+<div style="background-color:#f5f5f5" >
+    <div class="parallax">
+    </div>
+    <br><br><br><br>
+    <h1 class="text-center" style="z-index: 10; position: relative;">
+        <span class="display-4 text-default">About US</span>
+        <hr>
+    </h1>
+    <div class="container" style="margin-top:80px">
+        <p>
+            Pioneer English Classes is an institute that aids in the development and refinement of one's English communication skills. This establishment was built with an aim to become one of the preferred language training institutes in the region. This organisation was set up with a view to train and develop its students with high-quality communicative English through individual attention and overall personality development. It is well-known as a centre for learning English for competitive examinations as well as for effective communication. Over the years, they have trained people countless citizens belonging to different walks of life; from students to working professionals. With years of experience in this field under their belt, they have established a repute for their quality teaching methods that help them understand the specific requirements of every learner at their institute.  Undoubtedly it is one of the best language class for English in Hanuman Mandir Road, Deoria.
+        </p>
+        <br><br><br>
+        <div class="parallax1">
+        </div>
+        <center>
+            <h1 class="text-center h1_1 container ">
+                Instructor
+                <hr>
+                <hr>
+            </h1>
+            <br>
+            <div class="container" >
+                <div class="row ">
+                    &emsp;&emsp;&emsp;&emsp;
+                    <div class="col-lg-5 col-md-5 col-sm-5">
+                        <div class="card-wrapper">
+                            <div id="card-1" class="card card-rotating text-center">
+                                <div class="face front">
+                                    <br>
+                                    <div class="avatar mx-auto white"><img src="../../static/accounts/images/q1.jpeg" style="height:250px; width:200px" class="rounded-circle"
+                                        alt="Sample avatar image.">
+                                    </div>
+                                    <div class="card-body">
+                                        <h4 class="font-weight-bold mb-3">Brijesh Singh</h4>
+                                        <p class="font-weight-bold blue-text">Learner & Trainer</p>
+                                    </div>
+                                </div>
+                                <div class="face back">
+                                    <div class="card-body">
+                                        <hr>
+                                        <p>
+                                            <big class="a">Advocate</big><br>M.A, B.Ed, LL.B, P.G.D.M.M
+                                        <hr>
+                                        <ul class="list-inline py-2">
+                                            <li class="list-inline-item"><a class="p-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li class="list-inline-item"><a class="p-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a></li>
+                                            <li class="list-inline-item"><a class="p-2 fa-lg gplus-ic"><i class="fab fa-google-plus-g"></i></a></li>
+                                            <li class="list-inline-item"><a class="p-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    &emsp;&emsp;&emsp;
+                    <div class="col-lg-5 col-md-5 col-sm-5">
+                        <div class="card-wrapper">
+                            <div id="card-1" class="card card-rotating text-center">
+                                <div class="face front">
+                                    <br>
+                                    <div class="avatar mx-auto white"><img style="height:250px; width:200px" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" class="rounded-circle"
+                                        alt="Sample avatar image.">
+                                    </div>
+                                    <div class="card-body">
+                                        <h4 class="font-weight-bold mb-3">Marie Johnson</h4>
+                                        <p class="font-weight-bold blue-text">Trainer</p>
+                                    </div>
+                                </div>
+                                <div class="face back">
+                                    <div class="card-body">
+                                        <hr>
+                                        <p>
+                                            M.A, B.Ed, LL.B, P.G.D.M.M<br><br>
+                                        </p>
+                                        <hr>
+                                        <!-- Social Icons -->
+                                        <ul class="list-inline py-2">
+                                            <li class="list-inline-item"><a class="p-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li class="list-inline-item"><a class="p-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a></li>
+                                            <li class="list-inline-item"><a class="p-2 fa-lg gplus-ic"><i class="fab fa-google-plus-g"></i></a></li>
+                                            <li class="list-inline-item"><a class="p-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </center>
+        <br><br><br><br><br><br>
+        <p >
+        <h2 class="text-muted">Services offered at Pioneer English Classes :</h2>
+        <br>
+        Pioneer English Classes in Hanuman Mandir Road offers quality training through a variety of courses. There are experienced trainers at this institute that help a learner understand and grasp the concepts effectively. To prepare professionals for a better future, they also extend soft skills training and seminars under corporate training. Pay for the services in Cash. The hours of operation are from 06:00 - 19:00 from Mondays to Saturdays.
+        </p><br><br><br><br>
+    </div>
+</div>
+{% endblock %}
